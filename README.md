@@ -1,4 +1,25 @@
+# Google Tag Manager com Create React App
 
+## O que é este repositório?
+
+Este repositório visa apresentar de maneira simples e enxuta uma solução para implementação de Google Tag Manager ( `GTM` ) em Single Page Applications utilizando `Create React App` com objetivo de evitar problemas comuns.
+
+## A Estrutura
+
+- Arquivos envs com códigos de GTM diferentes: `.env`, `.env.production`, `.env.staging`;
+- Arquivo `config/index.js` que expõe as variáveis de ambiente para utilização;
+- Arquivo `utils/gtm/index.js` que contém o helper de inserção do GTM;
+- Arquivo `components/Root` que implementa o `react-router-dom` para mudança de rotas e insere script do GTM;
+- Arquivo `components/App` que inicia o objeto de datalayer, contém a declaração das rotas e as observa;
+- Arquivos `components/Home`, `components/ReactPresentation`, `components/VuePresentation` servem como "páginas" na alternância de rotas;
+
+
+## Rodando o projeto
+
+1. Clone o repositório;
+2. Instale as dependências rodando o comando `yarn`;
+3. Rode o projeto com `yarn start`;
+4. Acesse a url: [http://localhost:3000](http://localhost:3000).
 
 ----
 
@@ -13,7 +34,7 @@ In the project directory, you can run:
 ### `yarn start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open  to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
