@@ -20,11 +20,14 @@ function App() {
   let location = useLocation();
 
   useEffect(() => {
-    datalayerObject.push({
-      event: 'virtualPageview',
-      vpvPage: location.pathname,
-      vpvTitle: document.title,
-    });
+    // waiting 100 milliseconds for Helmet change the page title
+    setTimeout(() => {
+      datalayerObject.push({
+        event: 'virtualPageview',
+        vpvPage: location.pathname,
+        vpvTitle: document.title,
+      });
+    }, 100);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
 
