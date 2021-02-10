@@ -1,4 +1,6 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router } from "react-router-dom";
+
 import gtm from 'utils/gtm';
 
 const Root = ({ children }) => {
@@ -7,9 +9,9 @@ const Root = ({ children }) => {
   }, []);
 
   return (
-    <Fragment>
+    <Router>
       {children}
-    </Fragment>
+    </Router>
   );
 };
 

@@ -1,7 +1,8 @@
+import config from 'config';
 import logo from './logo.svg';
 import './style.css';
 
-function ReactPresentation() {
+function Home() {
   return (
     <div className="align-center">
       <header className="header">
@@ -12,9 +13,14 @@ function ReactPresentation() {
         <p>
           Home
         </p>
+        <p>
+          Ambiente: {config.REACT_APP_SELF_ENV}
+          <br/>
+          GTM: {config.REACT_APP_GTM_ID}
+        </p>
       </header>
     </div>
   );
 }
 
-export default ReactPresentation;
+export default Home;

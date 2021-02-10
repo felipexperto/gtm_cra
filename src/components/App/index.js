@@ -1,17 +1,35 @@
+import React, { useEffect, Fragment } from "react";
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useLocation,
 } from "react-router-dom";
 
-import ReactPresentation from 'components/ReactPresentation';
-import VuePresentation from 'components/VuePresentation';
-import Home from 'components/Home';
+import ReactPresentation from "components/ReactPresentation";
+import VuePresentation from "components/VuePresentation";
+import Home from "components/Home";
 
 function App() {
+  let datalayerObject = null;
+  if (typeof window === 'undefined') {
+    datalayerObject = [];
+  } else {
+    datalayerObject = window.dataLayer ? window.dataLayer : [];
+  }
+  let location = useLocation();
+
+  useEffect(() => {
+    datalayerObject.push({
+      event: 'virtualPageview',
+      vpvPage: location.pathname,
+      vpvTitle: document.title,
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location]);
+
   return (
-    <Router>
+    <Fragment>
       <div>
         <nav>
           <ul>
@@ -27,8 +45,6 @@ function App() {
           </ul>
         </nav>
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/react">
             <ReactPresentation />
@@ -41,7 +57,7 @@ function App() {
           </Route>
         </Switch>
       </div>
-    </Router>
+    </Fragment>
   );
 }
 

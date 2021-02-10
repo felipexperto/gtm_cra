@@ -13,7 +13,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "REACT_APP_HAL_ENV=development react-scripts start",
+    "start": "REACT_APP_SELF_ENV=development react-scripts start",
     "build:qa": "REACT_APP_SELF_ENV=staging react-scripts build",
     "build:prod": "REACT_APP_SELF_ENV=production react-scripts build",
     "test": "REACT_APP_SELF_ENV=test react-scripts test",
