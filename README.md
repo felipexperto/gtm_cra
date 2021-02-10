@@ -4,14 +4,17 @@
 
 Este repositório visa apresentar de maneira simples e enxuta uma solução para implementação de Google Tag Manager ( `GTM` ) em Single Page Applications utilizando `Create React App` com objetivo de evitar problemas comuns.
 
+
 ## A Estrutura
 
-- Arquivos envs com códigos de GTM diferentes: `.env`, `.env.production`, `.env.staging`;
-- Arquivo `config/index.js` que expõe as variáveis de ambiente para utilização;
-- Arquivo `utils/gtm/index.js` que contém o helper de inserção do GTM;
-- Arquivo `components/Root` que implementa o `react-router-dom` para mudança de rotas e insere script do GTM;
-- Arquivo `components/App` que inicia o objeto de datalayer, contém a declaração das rotas e as observa;
-- Arquivos `components/Home`, `components/ReactPresentation`, `components/VuePresentation` servem como "páginas" na alternância de rotas;
+- Envs com códigos de GTM diferentes: `.env`, `.env.production`, `.env.staging`;
+- `jsconfig.json` para permitir imports absolutos da pasta `src`;
+- `package.json` com comandos de build, start e test personalizados;
+- `config/index.js` que expõe as variáveis de ambiente para utilização;
+- `utils/gtm/index.js` que contém o helper de inserção do GTM;
+- `components/Root` que implementa o `react-router-dom` para mudança de rotas e insere script do GTM;
+- `components/App` que inicia o objeto de datalayer, contém a declaração das rotas e as observa;
+- `components/Home`, `components/ReactPresentation` e `components/VuePresentation` servem como "páginas" na alternância de rotas;
 
 
 ## Rodando o projeto
