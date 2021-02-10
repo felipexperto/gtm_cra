@@ -1,8 +1,14 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import { MemoryRouter } from "react-router-dom";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+import App from 'components/App';
+
+test('renders home text', () => {
+  render(
+    <MemoryRouter initialEntries={['/']}>
+      <App />
+    </MemoryRouter>
+  );
+  const linkElement = screen.getByText(/Google Tag Manager - Create React App/i);
   expect(linkElement).toBeInTheDocument();
 });
